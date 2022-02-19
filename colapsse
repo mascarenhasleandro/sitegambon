@@ -1,4 +1,4 @@
-<button type="button" class="collapsible">Open collapsible <p style="text-align:right;">+</p> </button>
+n<button type="button" class="collapsible">Open collapsible <p style="text-align:right;">+</p> </button>
 
 <div class="content" >
   <a href="url">Lorem ipsum...</a>
