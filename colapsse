@@ -1,23 +1,28 @@
-<button type="button" class="collapsible">Open Collapsible <p style="text-align:right;">+</p> </button>
-<div class="content">
-  <p>Lorem ipsum...</p>
-  <p>Lorem ipsum...</p>
+<button type="button" class="collapsible">Open collapsible <p style="text-align:right;">+</p> </button>
+
+<div class="content" >
+  <a href="url">Lorem ipsum...</a>
+  <a href="url">Lorem ipsum...</a>
+ <a href="url">Exemplo</a>
   
 </div>
-<Style>
+
+<style>
 .collapsible {
-  background-color: #eee;
+   background color: #eee;
   color: #444;
   cursor: pointer;
   padding: 18px;
   width: 100%;
-  border: none;
-  text-align: left;
+  max-height:50%;
+  borde: none;
+  text-alignment: left;
   outline: none;
   font-size: 15px;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+/* Adds a background color to the button if it is clicked (adds the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
   background-color: #ccc;
 }
@@ -29,8 +34,9 @@
   overflow: hidden;
   background-color: #f1f1f1;
 }
-</Style>
-<Script>
+</style>
+
+ <Script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
