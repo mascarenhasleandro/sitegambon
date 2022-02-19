@@ -1,7 +1,11 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  .footer-block__heading {
-  background-color: #eee;
-  color: #444;
+.collapsible {
+  background-color: #777;
+  color: white;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -10,33 +14,72 @@
   outline: none;
   font-size: 15px;
 }
-  
-  .footer-block grid__item {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-  }
-  .active,.footer-block__heading:hover{
-    background-color:#ccc;
-  }
-  
-</style> 
 
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2>Animated Collapsibles</h2>
+
+<p>A Collapsible:</p>
+<button class="collapsible">Open Collapsible</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<p>Collapsible Set:</p>
+<button class="collapsible">Open Section 1</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button class="collapsible">Open Section 2</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button class="collapsible">Open Section 3</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
 
 <script>
-var coll = document.getElementsByClassName("footer-block__heading");
+var coll = document.getElementsByClassName("collapsible");
 var i;
 
-for (i = 0; i < col.length; i++) {
+for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var footer-block grid__item = this.nextElementSibling;
-    if (footer-block grid__item.style.display === "block") {
-      footer-block grid__item.style.display = "none";
-    } other {
-      footer-block grid__item.style.display = "block";
-    }
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
   });
 }
 </script>
+
+</body>
+</html>
